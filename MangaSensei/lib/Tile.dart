@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:MangaSensei/MangaDetails.dart';
 
 class MangaTile extends StatelessWidget {
   const MangaTile({Key key}) : super(key: key);
@@ -28,7 +29,12 @@ class MangaTile extends StatelessWidget {
                   Container(
                     child: RaisedButton(
                       color: Colors.transparent,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MangaDetails()));
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(

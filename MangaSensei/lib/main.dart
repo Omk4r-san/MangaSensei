@@ -1,3 +1,4 @@
+import 'package:MangaSensei/Searchpage.dart';
 import 'package:flutter/material.dart';
 import 'package:MangaSensei/Tile.dart';
 
@@ -55,7 +56,10 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           )),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Searchpage()));
+        },
         tooltip: 'Search',
         child: Icon(Icons.search),
       ), // This trailing comma makes auto-formatting nicer for build methods.
