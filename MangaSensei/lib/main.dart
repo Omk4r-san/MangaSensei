@@ -1,6 +1,5 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:MangaSensei/Tile.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,48 +46,19 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          MangaTile(),
-        ],
-      ),
+      body: GridView.count(
+          crossAxisCount: 2,
+          children: List.generate(
+            20,
+            (index) {
+              return MangaTile();
+            },
+          )),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        tooltip: 'Search',
+        child: Icon(Icons.search),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-class MangaTile extends StatelessWidget {
-  const MangaTile({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      width: 120,
-      color: Colors.transparent,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        semanticContainer: true,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        elevation: 5,
-        margin: EdgeInsets.all(5),
-        child: Column(
-          children: [
-            Container(
-              child: Image.asset(
-                "assets/background.png",
-                fit: BoxFit.fill,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
