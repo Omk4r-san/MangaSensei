@@ -5,17 +5,40 @@ class MangaDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
+    return Scaffold(
         body: Stack(
-          children: [
-            Image.asset(
-              "assets/background.png",
-              fit: BoxFit.fill,
-            )
-          ],
+      children: [
+        Container(
+          height: MediaQuery.of(context).size.height / 3,
+          color: Colors.grey,
+          child: Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                      color: Colors.black,
+                      blurRadius: 15.0, // soften the shadow
+                      spreadRadius: 0.3,
+                      offset: Offset(
+                        2.0,
+                        2.0,
+                      ))
+                ]),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image(
+                    image: AssetImage(
+                      "assets/Manga.jpg",
+                    ),
+                    height: 150,
+                  ),
+                ),
+              ),
+              Text("One Piece")
+            ],
+          ),
         ),
-      ),
-    );
+      ],
+    ));
   }
 }
