@@ -23,6 +23,9 @@ class _Home extends State<Home> {
         ),
       ),
       body: GridView.count(
+          childAspectRatio: (30 / 40),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
           crossAxisCount: 2,
           children: List.generate(
             20,

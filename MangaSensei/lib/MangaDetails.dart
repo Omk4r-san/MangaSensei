@@ -16,13 +16,10 @@ class MangaDetails extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(boxShadow: [
                   BoxShadow(
-                      color: Colors.black,
-                      blurRadius: 15.0, // soften the shadow
-                      spreadRadius: 0.3,
-                      offset: Offset(
-                        2.0,
-                        2.0,
-                      ))
+                    offset: const Offset(2.0, 2.0),
+                    blurRadius: 20.0, // soften the shadow
+                    spreadRadius: 0.0,
+                  )
                 ]),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -34,7 +31,110 @@ class MangaDetails extends StatelessWidget {
                   ),
                 ),
               ),
-              Text("One Piece")
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Align(
+                          child: Text(
+                        "One Piece",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
+                      )),
+                      Text("Author: Eichiro Oda"),
+                      Row(
+                        children: [
+                          Text("Tags:"),
+                          SizedBox(
+                            height: 15,
+                            width: 40,
+                            child: FlatButton(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 1.0),
+                                child: Text(
+                                  "Shonen",
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 5),
+                                ),
+                              ),
+                              color: Colors.white,
+                              onPressed: () {},
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: SizedBox(
+                              height: 15,
+                              width: 40,
+                              child: FlatButton(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 1.0),
+                                  child: Text(
+                                    "Shonen",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 5),
+                                  ),
+                                ),
+                                color: Colors.white,
+                                onPressed: () {},
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: SizedBox(
+                              height: 15,
+                              width: 40,
+                              child: FlatButton(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 1.0),
+                                  child: Text(
+                                    "Shonen",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 5),
+                                  ),
+                                ),
+                                color: Colors.white,
+                                onPressed: () {},
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("Rating:"),
+                          Icon(
+                            Icons.star,
+                            size: 15,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 15,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 15,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 15,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 15,
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
